@@ -23,4 +23,13 @@ public class TestWebService {
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "testConnection")
+    public String testConnection() {
+        System.out.println("[Server]- Server is Connected");
+        return "OK";
+    }
 }

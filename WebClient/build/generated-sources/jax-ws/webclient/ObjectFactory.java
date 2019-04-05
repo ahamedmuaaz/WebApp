@@ -25,6 +25,8 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _HelloResponse_QNAME = new QName("http://Server/", "helloResponse");
+    private final static QName _TestConnection_QNAME = new QName("http://Server/", "testConnection");
+    private final static QName _TestConnectionResponse_QNAME = new QName("http://Server/", "testConnectionResponse");
     private final static QName _Hello_QNAME = new QName("http://Server/", "hello");
 
     /**
@@ -32,6 +34,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link TestConnection }
+     * 
+     */
+    public TestConnection createTestConnection() {
+        return new TestConnection();
     }
 
     /**
@@ -51,12 +61,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TestConnectionResponse }
+     * 
+     */
+    public TestConnectionResponse createTestConnectionResponse() {
+        return new TestConnectionResponse();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://Server/", name = "helloResponse")
     public JAXBElement<HelloResponse> createHelloResponse(HelloResponse value) {
         return new JAXBElement<HelloResponse>(_HelloResponse_QNAME, HelloResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TestConnection }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "testConnection")
+    public JAXBElement<TestConnection> createTestConnection(TestConnection value) {
+        return new JAXBElement<TestConnection>(_TestConnection_QNAME, TestConnection.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TestConnectionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "testConnectionResponse")
+    public JAXBElement<TestConnectionResponse> createTestConnectionResponse(TestConnectionResponse value) {
+        return new JAXBElement<TestConnectionResponse>(_TestConnectionResponse_QNAME, TestConnectionResponse.class, null, value);
     }
 
     /**

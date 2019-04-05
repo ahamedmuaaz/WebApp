@@ -26,6 +26,18 @@ public interface TestWebService {
 
     /**
      * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "testConnection", targetNamespace = "http://Server/", className = "webclient.TestConnection")
+    @ResponseWrapper(localName = "testConnectionResponse", targetNamespace = "http://Server/", className = "webclient.TestConnectionResponse")
+    @Action(input = "http://Server/TestWebService/testConnectionRequest", output = "http://Server/TestWebService/testConnectionResponse")
+    public String testConnection();
+
+    /**
+     * 
      * @param name
      * @return
      *     returns java.lang.String
