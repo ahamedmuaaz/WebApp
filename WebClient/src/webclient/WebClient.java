@@ -27,6 +27,13 @@ public class WebClient {
         } else {
             System.out.println("[Client]-Server is not connected,test failed");
         }
+        System.out.println("Test Find Mimumum Between Method");
+        if(findMinimumBetween(25.0,30.0)==25){
+            System.out.println("[Client]-Find Mimimum , Correct results");
+        }
+        else{
+        System.out.println("[Client]-Find Mimimum, Wrong results");
+        }
 
         System.out.println("[Client]-Executing Test ,Completed!");
     }
@@ -35,6 +42,12 @@ public class WebClient {
         webclient.WebService service = new webclient.WebService();
         webclient.TestWebService port = service.getTestWebServicePort();
         return port.testConnection();
+    }
+
+    private static Double findMinimumBetween(java.lang.Double a, java.lang.Double b) {
+        webclient.WebService service = new webclient.WebService();
+        webclient.TestWebService port = service.getTestWebServicePort();
+        return port.findMinimumBetween(a, b);
     }
 
 }

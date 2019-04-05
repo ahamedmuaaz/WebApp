@@ -32,4 +32,16 @@ public class TestWebService {
         System.out.println("[Server]- Server is Connected");
         return "OK";
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "findMinimumBetween")
+    public Double findMinimumBetween(@WebParam(name = "a") Double a, @WebParam(name = "b") Double b) {
+        if (a.doubleValue() < b.doubleValue()) {
+            return a;
+        } else {
+            return b;
+        }
+    }
 }

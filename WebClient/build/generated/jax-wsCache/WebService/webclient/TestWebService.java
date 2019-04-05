@@ -38,6 +38,24 @@ public interface TestWebService {
 
     /**
      * 
+     * @param a
+     * @param b
+     * @return
+     *     returns java.lang.Double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findMinimumBetween", targetNamespace = "http://Server/", className = "webclient.FindMinimumBetween")
+    @ResponseWrapper(localName = "findMinimumBetweenResponse", targetNamespace = "http://Server/", className = "webclient.FindMinimumBetweenResponse")
+    @Action(input = "http://Server/TestWebService/findMinimumBetweenRequest", output = "http://Server/TestWebService/findMinimumBetweenResponse")
+    public Double findMinimumBetween(
+        @WebParam(name = "a", targetNamespace = "")
+        Double a,
+        @WebParam(name = "b", targetNamespace = "")
+        Double b);
+
+    /**
+     * 
      * @param name
      * @return
      *     returns java.lang.String

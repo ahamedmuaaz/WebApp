@@ -10,6 +10,12 @@
 <message name="testConnectionResponse">
 <part name="parameters" element="tns:testConnectionResponse"/>
 </message>
+<message name="findMinimumBetween">
+<part name="parameters" element="tns:findMinimumBetween"/>
+</message>
+<message name="findMinimumBetweenResponse">
+<part name="parameters" element="tns:findMinimumBetweenResponse"/>
+</message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
 </message>
@@ -21,6 +27,10 @@
 <input wsam:Action="http://Server/TestWebService/testConnectionRequest" message="tns:testConnection"/>
 <output wsam:Action="http://Server/TestWebService/testConnectionResponse" message="tns:testConnectionResponse"/>
 </operation>
+<operation name="findMinimumBetween">
+<input wsam:Action="http://Server/TestWebService/findMinimumBetweenRequest" message="tns:findMinimumBetween"/>
+<output wsam:Action="http://Server/TestWebService/findMinimumBetweenResponse" message="tns:findMinimumBetweenResponse"/>
+</operation>
 <operation name="hello">
 <input wsam:Action="http://Server/TestWebService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://Server/TestWebService/helloResponse" message="tns:helloResponse"/>
@@ -29,6 +39,15 @@
 <binding name="TestWebServicePortBinding" type="tns:TestWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="testConnection">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="findMinimumBetween">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
