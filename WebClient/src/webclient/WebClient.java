@@ -5,6 +5,9 @@
  */
 package webclient;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp
@@ -44,8 +47,49 @@ public class WebClient {
         } else {
             System.out.println("Find Min Among samples ,Wrong Results");
         }
+        System.out.println("[client]- Test min between with exception with both filled values");
 
-        System.out.println("[Client]-Executing Test ,Completed!");
+        try {
+            if (findMinimumBetweenWithException(2.5, 5.0) == 2.5) {
+                System.out.println("[client]-findMinnimumBetweenWithException , Correct Results");
+            }
+        } catch (Exception_Exception ex) {
+             System.out.println("[client]-findMinnimumBetweenWithException , You shoud see this exception");
+        }
+        
+         System.out.println("[client]- Test min between with exception with a as null value");
+
+        try {
+            if (findMinimumBetweenWithException(null, 5.0) == 2.5) {
+                System.out.println("[client]-findMinnimumBetweenWithException , Correct Results");
+            }
+        } catch (Exception_Exception ex) {
+             System.out.println("[client]-findMinnimumBetweenWithException , You shoud see this exception!!!");
+        }
+        
+          System.out.println("[client]- Test min between with exception with b as null value");
+
+        try {
+            if (findMinimumBetweenWithException(2.5,null) == 2.5) {
+                System.out.println("[client]-findMinnimumBetweenWithException , Correct Results");
+            }
+        } catch (Exception_Exception ex) {
+             System.out.println("[client]-findMinnimumBetweenWithException , You shoud see this exception!!!");
+        }
+        
+        
+          System.out.println("[client]- Test min between with exception with a,b as null value");
+
+        try {
+            if (findMinimumBetweenWithException(null,null) == 2.5) {
+                System.out.println("[client]-findMinnimumBetweenWithException , Correct Results");
+            }
+        } catch (Exception_Exception ex) {
+             System.out.println("[client]-findMinnimumBetweenWithException , You shoud see this exception!!!");
+        }
+        
+        
+         System.out.println("[Client]-Executing Test ,Completed!");
     }
 
     private static String testConnection() {
@@ -70,6 +114,12 @@ public class WebClient {
         webclient.WebService service = new webclient.WebService();
         webclient.TestWebService port = service.getTestWebServicePort();
         return port.findMinimumAmongSamples();
+    }
+
+    private static Double findMinimumBetweenWithException(java.lang.Double a, java.lang.Double b) throws Exception_Exception {
+        webclient.WebService service = new webclient.WebService();
+        webclient.TestWebService port = service.getTestWebServicePort();
+        return port.findMinimumBetweenWithException(a, b);
     }
 
 }

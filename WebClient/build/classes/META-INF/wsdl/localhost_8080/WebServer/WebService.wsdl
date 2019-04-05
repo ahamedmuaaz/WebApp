@@ -22,6 +22,15 @@
 <message name="findMinimumAmongSamplesResponse">
 <part name="parameters" element="tns:findMinimumAmongSamplesResponse"/>
 </message>
+<message name="findMinimumBetweenWithException">
+<part name="parameters" element="tns:findMinimumBetweenWithException"/>
+</message>
+<message name="findMinimumBetweenWithExceptionResponse">
+<part name="parameters" element="tns:findMinimumBetweenWithExceptionResponse"/>
+</message>
+<message name="Exception">
+<part name="fault" element="tns:Exception"/>
+</message>
 <message name="findMinimumBetween">
 <part name="parameters" element="tns:findMinimumBetween"/>
 </message>
@@ -46,6 +55,11 @@
 <operation name="findMinimumAmongSamples">
 <input wsam:Action="http://Server/TestWebService/findMinimumAmongSamplesRequest" message="tns:findMinimumAmongSamples"/>
 <output wsam:Action="http://Server/TestWebService/findMinimumAmongSamplesResponse" message="tns:findMinimumAmongSamplesResponse"/>
+</operation>
+<operation name="findMinimumBetweenWithException">
+<input wsam:Action="http://Server/TestWebService/findMinimumBetweenWithExceptionRequest" message="tns:findMinimumBetweenWithException"/>
+<output wsam:Action="http://Server/TestWebService/findMinimumBetweenWithExceptionResponse" message="tns:findMinimumBetweenWithExceptionResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://Server/TestWebService/findMinimumBetweenWithException/Fault/Exception"/>
 </operation>
 <operation name="findMinimumBetween">
 <input wsam:Action="http://Server/TestWebService/findMinimumBetweenRequest" message="tns:findMinimumBetween"/>
@@ -84,6 +98,18 @@
 <output>
 <soap:body use="literal"/>
 </output>
+</operation>
+<operation name="findMinimumBetweenWithException">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
 </operation>
 <operation name="findMinimumBetween">
 <soap:operation soapAction=""/>

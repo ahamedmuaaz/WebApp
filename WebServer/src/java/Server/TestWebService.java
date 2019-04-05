@@ -17,7 +17,9 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "WebService")
 public class TestWebService {
-     ArrayList<Double> samples=new ArrayList<Double>();
+
+    ArrayList<Double> samples = new ArrayList<Double>();
+
     /**
      * This is a sample web service operation
      */
@@ -53,7 +55,7 @@ public class TestWebService {
     @WebMethod(operationName = "addSample")
     public void addSample(@WebParam(name = "sample") Double sample) {
         samples.add(sample);
-       // return null;
+        // return null;
     }
 
     /**
@@ -64,5 +66,23 @@ public class TestWebService {
         //TODO write your implementation code here:
         return Collections.min(samples);
     }
-    
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "findMinimumBetweenWithException")
+    public Double findMinimumBetweenWithException(@WebParam(name = "a") Double a, @WebParam(name = "b") Double b) throws Exception {
+        if (a == null) {
+            throw new Exception();
+        }
+        if (b == null) {
+            throw new Exception();
+        }
+        if (a.floatValue() < b.floatValue()) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
 }

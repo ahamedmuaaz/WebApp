@@ -27,19 +27,62 @@ public class ObjectFactory {
     private final static QName _HelloResponse_QNAME = new QName("http://Server/", "helloResponse");
     private final static QName _AddSampleResponse_QNAME = new QName("http://Server/", "addSampleResponse");
     private final static QName _FindMinimumBetweenResponse_QNAME = new QName("http://Server/", "findMinimumBetweenResponse");
-    private final static QName _TestConnection_QNAME = new QName("http://Server/", "testConnection");
     private final static QName _AddSample_QNAME = new QName("http://Server/", "addSample");
     private final static QName _TestConnectionResponse_QNAME = new QName("http://Server/", "testConnectionResponse");
-    private final static QName _FindMinimumBetween_QNAME = new QName("http://Server/", "findMinimumBetween");
     private final static QName _Hello_QNAME = new QName("http://Server/", "hello");
     private final static QName _FindMinimumAmongSamplesResponse_QNAME = new QName("http://Server/", "findMinimumAmongSamplesResponse");
     private final static QName _FindMinimumAmongSamples_QNAME = new QName("http://Server/", "findMinimumAmongSamples");
+    private final static QName _FindMinimumBetweenWithExceptionResponse_QNAME = new QName("http://Server/", "findMinimumBetweenWithExceptionResponse");
+    private final static QName _TestConnection_QNAME = new QName("http://Server/", "testConnection");
+    private final static QName _Exception_QNAME = new QName("http://Server/", "Exception");
+    private final static QName _FindMinimumBetween_QNAME = new QName("http://Server/", "findMinimumBetween");
+    private final static QName _FindMinimumBetweenWithException_QNAME = new QName("http://Server/", "findMinimumBetweenWithException");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: webclient
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link TestConnection }
+     * 
+     */
+    public TestConnection createTestConnection() {
+        return new TestConnection();
+    }
+
+    /**
+     * Create an instance of {@link FindMinimumBetweenWithExceptionResponse }
+     * 
+     */
+    public FindMinimumBetweenWithExceptionResponse createFindMinimumBetweenWithExceptionResponse() {
+        return new FindMinimumBetweenWithExceptionResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindMinimumBetweenWithException }
+     * 
+     */
+    public FindMinimumBetweenWithException createFindMinimumBetweenWithException() {
+        return new FindMinimumBetweenWithException();
+    }
+
+    /**
+     * Create an instance of {@link FindMinimumBetween }
+     * 
+     */
+    public FindMinimumBetween createFindMinimumBetween() {
+        return new FindMinimumBetween();
+    }
+
+    /**
+     * Create an instance of {@link Exception }
+     * 
+     */
+    public Exception createException() {
+        return new Exception();
     }
 
     /**
@@ -64,14 +107,6 @@ public class ObjectFactory {
      */
     public FindMinimumBetweenResponse createFindMinimumBetweenResponse() {
         return new FindMinimumBetweenResponse();
-    }
-
-    /**
-     * Create an instance of {@link TestConnection }
-     * 
-     */
-    public TestConnection createTestConnection() {
-        return new TestConnection();
     }
 
     /**
@@ -104,14 +139,6 @@ public class ObjectFactory {
      */
     public Hello createHello() {
         return new Hello();
-    }
-
-    /**
-     * Create an instance of {@link FindMinimumBetween }
-     * 
-     */
-    public FindMinimumBetween createFindMinimumBetween() {
-        return new FindMinimumBetween();
     }
 
     /**
@@ -150,15 +177,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link TestConnection }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://Server/", name = "testConnection")
-    public JAXBElement<TestConnection> createTestConnection(TestConnection value) {
-        return new JAXBElement<TestConnection>(_TestConnection_QNAME, TestConnection.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddSample }{@code >}}
      * 
      */
@@ -174,15 +192,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Server/", name = "testConnectionResponse")
     public JAXBElement<TestConnectionResponse> createTestConnectionResponse(TestConnectionResponse value) {
         return new JAXBElement<TestConnectionResponse>(_TestConnectionResponse_QNAME, TestConnectionResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumBetween }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://Server/", name = "findMinimumBetween")
-    public JAXBElement<FindMinimumBetween> createFindMinimumBetween(FindMinimumBetween value) {
-        return new JAXBElement<FindMinimumBetween>(_FindMinimumBetween_QNAME, FindMinimumBetween.class, null, value);
     }
 
     /**
@@ -210,6 +219,51 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Server/", name = "findMinimumAmongSamples")
     public JAXBElement<FindMinimumAmongSamples> createFindMinimumAmongSamples(FindMinimumAmongSamples value) {
         return new JAXBElement<FindMinimumAmongSamples>(_FindMinimumAmongSamples_QNAME, FindMinimumAmongSamples.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumBetweenWithExceptionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "findMinimumBetweenWithExceptionResponse")
+    public JAXBElement<FindMinimumBetweenWithExceptionResponse> createFindMinimumBetweenWithExceptionResponse(FindMinimumBetweenWithExceptionResponse value) {
+        return new JAXBElement<FindMinimumBetweenWithExceptionResponse>(_FindMinimumBetweenWithExceptionResponse_QNAME, FindMinimumBetweenWithExceptionResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TestConnection }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "testConnection")
+    public JAXBElement<TestConnection> createTestConnection(TestConnection value) {
+        return new JAXBElement<TestConnection>(_TestConnection_QNAME, TestConnection.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Exception }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "Exception")
+    public JAXBElement<Exception> createException(Exception value) {
+        return new JAXBElement<Exception>(_Exception_QNAME, Exception.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumBetween }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "findMinimumBetween")
+    public JAXBElement<FindMinimumBetween> createFindMinimumBetween(FindMinimumBetween value) {
+        return new JAXBElement<FindMinimumBetween>(_FindMinimumBetween_QNAME, FindMinimumBetween.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumBetweenWithException }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "findMinimumBetweenWithException")
+    public JAXBElement<FindMinimumBetweenWithException> createFindMinimumBetweenWithException(FindMinimumBetweenWithException value) {
+        return new JAXBElement<FindMinimumBetweenWithException>(_FindMinimumBetweenWithException_QNAME, FindMinimumBetweenWithException.class, null, value);
     }
 
 }

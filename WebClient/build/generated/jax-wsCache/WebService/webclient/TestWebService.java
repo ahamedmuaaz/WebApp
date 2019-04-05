@@ -7,6 +7,7 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
+import javax.xml.ws.FaultAction;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -59,6 +60,29 @@ public interface TestWebService {
     @ResponseWrapper(localName = "findMinimumAmongSamplesResponse", targetNamespace = "http://Server/", className = "webclient.FindMinimumAmongSamplesResponse")
     @Action(input = "http://Server/TestWebService/findMinimumAmongSamplesRequest", output = "http://Server/TestWebService/findMinimumAmongSamplesResponse")
     public Double findMinimumAmongSamples();
+
+    /**
+     * 
+     * @param a
+     * @param b
+     * @return
+     *     returns java.lang.Double
+     * @throws Exception_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findMinimumBetweenWithException", targetNamespace = "http://Server/", className = "webclient.FindMinimumBetweenWithException")
+    @ResponseWrapper(localName = "findMinimumBetweenWithExceptionResponse", targetNamespace = "http://Server/", className = "webclient.FindMinimumBetweenWithExceptionResponse")
+    @Action(input = "http://Server/TestWebService/findMinimumBetweenWithExceptionRequest", output = "http://Server/TestWebService/findMinimumBetweenWithExceptionResponse", fault = {
+        @FaultAction(className = Exception_Exception.class, value = "http://Server/TestWebService/findMinimumBetweenWithException/Fault/Exception")
+    })
+    public Double findMinimumBetweenWithException(
+        @WebParam(name = "a", targetNamespace = "")
+        Double a,
+        @WebParam(name = "b", targetNamespace = "")
+        Double b)
+        throws Exception_Exception
+    ;
 
     /**
      * 
