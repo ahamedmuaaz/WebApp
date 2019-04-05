@@ -27,6 +27,21 @@ public interface TestWebService {
 
     /**
      * 
+     * @param point2D
+     * @return
+     *     returns java.lang.Double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findMinimumCoordinade", targetNamespace = "http://Server/", className = "webclient.FindMinimumCoordinade")
+    @ResponseWrapper(localName = "findMinimumCoordinadeResponse", targetNamespace = "http://Server/", className = "webclient.FindMinimumCoordinadeResponse")
+    @Action(input = "http://Server/TestWebService/findMinimumCoordinadeRequest", output = "http://Server/TestWebService/findMinimumCoordinadeResponse")
+    public Double findMinimumCoordinade(
+        @WebParam(name = "point2d", targetNamespace = "")
+        Point2D point2D);
+
+    /**
+     * 
      * @param sample
      */
     @WebMethod

@@ -17,12 +17,12 @@ public class WebClient {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public  static void main(String[] args) {
         WebClient client = new WebClient();
         client.executeTest();
     }
 
-    public static void executeTest() {
+    public void executeTest() {
         System.out.println("[Client]-Executing Test ,Started");
 
         if (testConnection().equals("OK")) {
@@ -87,6 +87,11 @@ public class WebClient {
         } catch (Exception_Exception ex) {
              System.out.println("[client]-findMinnimumBetweenWithException , You shoud see this exception!!!");
         }
+        System.out.println("[Client]- Testing findMinimumcoordinate with 2.5 & 3.5");
+        
+        Point2D m=new Point2D();
+        
+        
         
         
          System.out.println("[Client]-Executing Test ,Completed!");
@@ -121,5 +126,12 @@ public class WebClient {
         webclient.TestWebService port = service.getTestWebServicePort();
         return port.findMinimumBetweenWithException(a, b);
     }
+
+    private static Double findMinimumCoordinade(webclient.Point2D point2D) {
+        webclient.WebService service = new webclient.WebService();
+        webclient.TestWebService port = service.getTestWebServicePort();
+        return port.findMinimumCoordinade(point2D);
+    }
+    
 
 }

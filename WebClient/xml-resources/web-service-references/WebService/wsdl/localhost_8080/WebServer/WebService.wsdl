@@ -4,6 +4,12 @@
 <xsd:import namespace="http://Server/" schemaLocation="http://localhost:8080/WebServer/WebService?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="findMinimumCoordinade">
+<part name="parameters" element="tns:findMinimumCoordinade"/>
+</message>
+<message name="findMinimumCoordinadeResponse">
+<part name="parameters" element="tns:findMinimumCoordinadeResponse"/>
+</message>
 <message name="addSample">
 <part name="parameters" element="tns:addSample"/>
 </message>
@@ -44,6 +50,10 @@
 <part name="parameters" element="tns:helloResponse"/>
 </message>
 <portType name="TestWebService">
+<operation name="findMinimumCoordinade">
+<input wsam:Action="http://Server/TestWebService/findMinimumCoordinadeRequest" message="tns:findMinimumCoordinade"/>
+<output wsam:Action="http://Server/TestWebService/findMinimumCoordinadeResponse" message="tns:findMinimumCoordinadeResponse"/>
+</operation>
 <operation name="addSample">
 <input wsam:Action="http://Server/TestWebService/addSampleRequest" message="tns:addSample"/>
 <output wsam:Action="http://Server/TestWebService/addSampleResponse" message="tns:addSampleResponse"/>
@@ -72,6 +82,15 @@
 </portType>
 <binding name="TestWebServicePortBinding" type="tns:TestWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="findMinimumCoordinade">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="addSample">
 <soap:operation soapAction=""/>
 <input>

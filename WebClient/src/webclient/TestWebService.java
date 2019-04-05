@@ -1,6 +1,7 @@
 
 package webclient;
 
+import webclient.*;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;

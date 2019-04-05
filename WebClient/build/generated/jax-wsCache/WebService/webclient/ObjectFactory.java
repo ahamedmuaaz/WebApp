@@ -28,6 +28,7 @@ public class ObjectFactory {
     private final static QName _AddSampleResponse_QNAME = new QName("http://Server/", "addSampleResponse");
     private final static QName _FindMinimumBetweenResponse_QNAME = new QName("http://Server/", "findMinimumBetweenResponse");
     private final static QName _AddSample_QNAME = new QName("http://Server/", "addSample");
+    private final static QName _FindMinimumCoordinadeResponse_QNAME = new QName("http://Server/", "findMinimumCoordinadeResponse");
     private final static QName _TestConnectionResponse_QNAME = new QName("http://Server/", "testConnectionResponse");
     private final static QName _Hello_QNAME = new QName("http://Server/", "hello");
     private final static QName _FindMinimumAmongSamplesResponse_QNAME = new QName("http://Server/", "findMinimumAmongSamplesResponse");
@@ -37,6 +38,7 @@ public class ObjectFactory {
     private final static QName _Exception_QNAME = new QName("http://Server/", "Exception");
     private final static QName _FindMinimumBetween_QNAME = new QName("http://Server/", "findMinimumBetween");
     private final static QName _FindMinimumBetweenWithException_QNAME = new QName("http://Server/", "findMinimumBetweenWithException");
+    private final static QName _FindMinimumCoordinade_QNAME = new QName("http://Server/", "findMinimumCoordinade");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: webclient
@@ -59,6 +61,14 @@ public class ObjectFactory {
      */
     public FindMinimumBetweenWithExceptionResponse createFindMinimumBetweenWithExceptionResponse() {
         return new FindMinimumBetweenWithExceptionResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindMinimumCoordinade }
+     * 
+     */
+    public FindMinimumCoordinade createFindMinimumCoordinade() {
+        return new FindMinimumCoordinade();
     }
 
     /**
@@ -91,6 +101,14 @@ public class ObjectFactory {
      */
     public AddSample createAddSample() {
         return new AddSample();
+    }
+
+    /**
+     * Create an instance of {@link FindMinimumCoordinadeResponse }
+     * 
+     */
+    public FindMinimumCoordinadeResponse createFindMinimumCoordinadeResponse() {
+        return new FindMinimumCoordinadeResponse();
     }
 
     /**
@@ -150,6 +168,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Point2D }
+     * 
+     */
+    public Point2D createPoint2D() {
+        return new Point2D();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
      * 
      */
@@ -183,6 +209,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Server/", name = "addSample")
     public JAXBElement<AddSample> createAddSample(AddSample value) {
         return new JAXBElement<AddSample>(_AddSample_QNAME, AddSample.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumCoordinadeResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "findMinimumCoordinadeResponse")
+    public JAXBElement<FindMinimumCoordinadeResponse> createFindMinimumCoordinadeResponse(FindMinimumCoordinadeResponse value) {
+        return new JAXBElement<FindMinimumCoordinadeResponse>(_FindMinimumCoordinadeResponse_QNAME, FindMinimumCoordinadeResponse.class, null, value);
     }
 
     /**
@@ -264,6 +299,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Server/", name = "findMinimumBetweenWithException")
     public JAXBElement<FindMinimumBetweenWithException> createFindMinimumBetweenWithException(FindMinimumBetweenWithException value) {
         return new JAXBElement<FindMinimumBetweenWithException>(_FindMinimumBetweenWithException_QNAME, FindMinimumBetweenWithException.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumCoordinade }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "findMinimumCoordinade")
+    public JAXBElement<FindMinimumCoordinade> createFindMinimumCoordinade(FindMinimumCoordinade value) {
+        return new JAXBElement<FindMinimumCoordinade>(_FindMinimumCoordinade_QNAME, FindMinimumCoordinade.class, null, value);
     }
 
 }

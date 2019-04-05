@@ -85,4 +85,17 @@ public class TestWebService {
         }
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "findMinimumCoordinade")
+    public Double findMinimumCoordinade(@WebParam(name = "point2d") Point2D point2d) {
+        //TODO write your implementation code here:
+        if (point2d.x.floatValue() < point2d.y.floatValue()) {
+            return point2d.x;
+        } else {
+            return point2d.y;
+        }
+    }
+
 }
