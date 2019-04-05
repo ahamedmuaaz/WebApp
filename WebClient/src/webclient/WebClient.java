@@ -15,7 +15,13 @@ public class WebClient {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        WebClient client=new WebClient();
+        client.executeTest();
+    }
+    public static void executeTest(){
+        System.out.println("[Client]-Executing Test ,Started");
+        
+        System.out.println("[Client]-Executing Test ,Completed!");
     }
     
 }
