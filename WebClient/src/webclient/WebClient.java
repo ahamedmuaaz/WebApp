@@ -8,6 +8,7 @@ package webclient;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author hp
@@ -90,6 +91,16 @@ public class WebClient {
         System.out.println("[Client]- Testing findMinimumcoordinate with 2.5 & 3.5");
         
         Point2D m=new Point2D();
+        m.x=2.5;
+        m.y=3.5;
+        
+        if(findMinimumCoordinade(m)==2.5){
+        
+             System.out.println("[Client]- Testing findMinimumcoordinate with 2.5 & 3.5 ,correct results");
+        }
+        else{
+              System.out.println("[Client]- Testing findMinimumcoordinate with 2.5 & 3.5,wrong results");
+        }
         
         
         

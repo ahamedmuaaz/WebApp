@@ -18,6 +18,10 @@
 
 <xs:element name="findMinimumBetweenWithExceptionResponse" type="tns:findMinimumBetweenWithExceptionResponse"/>
 
+<xs:element name="findMinimumCoordinade" type="tns:findMinimumCoordinade"/>
+
+<xs:element name="findMinimumCoordinadeResponse" type="tns:findMinimumCoordinadeResponse"/>
+
 <xs:element name="hello" type="tns:hello"/>
 
 <xs:element name="helloResponse" type="tns:helloResponse"/>
@@ -34,6 +38,25 @@
 </xs:complexType>
 
 <xs:complexType name="findMinimumBetweenResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findMinimumCoordinade">
+<xs:sequence>
+<xs:element name="point2d" type="tns:point2D" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="point2D">
+<xs:sequence>
+<xs:element name="x" type="xs:double" minOccurs="0"/>
+<xs:element name="y" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findMinimumCoordinadeResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:double" minOccurs="0"/>
 </xs:sequence>
