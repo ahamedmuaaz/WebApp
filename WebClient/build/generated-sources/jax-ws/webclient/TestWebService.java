@@ -26,6 +26,18 @@ public interface TestWebService {
 
     /**
      * 
+     * @param sample
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addSample", targetNamespace = "http://Server/", className = "webclient.AddSample")
+    @ResponseWrapper(localName = "addSampleResponse", targetNamespace = "http://Server/", className = "webclient.AddSampleResponse")
+    @Action(input = "http://Server/TestWebService/addSampleRequest", output = "http://Server/TestWebService/addSampleResponse")
+    public void addSample(
+        @WebParam(name = "sample", targetNamespace = "")
+        Double sample);
+
+    /**
+     * 
      * @return
      *     returns java.lang.String
      */
@@ -35,6 +47,18 @@ public interface TestWebService {
     @ResponseWrapper(localName = "testConnectionResponse", targetNamespace = "http://Server/", className = "webclient.TestConnectionResponse")
     @Action(input = "http://Server/TestWebService/testConnectionRequest", output = "http://Server/TestWebService/testConnectionResponse")
     public String testConnection();
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.Double
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findMinimumAmongSamples", targetNamespace = "http://Server/", className = "webclient.FindMinimumAmongSamples")
+    @ResponseWrapper(localName = "findMinimumAmongSamplesResponse", targetNamespace = "http://Server/", className = "webclient.FindMinimumAmongSamplesResponse")
+    @Action(input = "http://Server/TestWebService/findMinimumAmongSamplesRequest", output = "http://Server/TestWebService/findMinimumAmongSamplesResponse")
+    public Double findMinimumAmongSamples();
 
     /**
      * 

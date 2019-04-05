@@ -5,6 +5,8 @@
  */
 package Server;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -15,7 +17,7 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "WebService")
 public class TestWebService {
-
+     ArrayList<Double> samples=new ArrayList<Double>();
     /**
      * This is a sample web service operation
      */
@@ -44,4 +46,23 @@ public class TestWebService {
             return b;
         }
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "addSample")
+    public void addSample(@WebParam(name = "sample") Double sample) {
+        samples.add(sample);
+       // return null;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "findMinimumAmongSamples")
+    public Double findMinimumAmongSamples() {
+        //TODO write your implementation code here:
+        return Collections.min(samples);
+    }
+    
 }

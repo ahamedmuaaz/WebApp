@@ -25,17 +25,37 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _HelloResponse_QNAME = new QName("http://Server/", "helloResponse");
+    private final static QName _AddSampleResponse_QNAME = new QName("http://Server/", "addSampleResponse");
     private final static QName _FindMinimumBetweenResponse_QNAME = new QName("http://Server/", "findMinimumBetweenResponse");
     private final static QName _TestConnection_QNAME = new QName("http://Server/", "testConnection");
+    private final static QName _AddSample_QNAME = new QName("http://Server/", "addSample");
     private final static QName _TestConnectionResponse_QNAME = new QName("http://Server/", "testConnectionResponse");
     private final static QName _FindMinimumBetween_QNAME = new QName("http://Server/", "findMinimumBetween");
     private final static QName _Hello_QNAME = new QName("http://Server/", "hello");
+    private final static QName _FindMinimumAmongSamplesResponse_QNAME = new QName("http://Server/", "findMinimumAmongSamplesResponse");
+    private final static QName _FindMinimumAmongSamples_QNAME = new QName("http://Server/", "findMinimumAmongSamples");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: webclient
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link AddSample }
+     * 
+     */
+    public AddSample createAddSample() {
+        return new AddSample();
+    }
+
+    /**
+     * Create an instance of {@link AddSampleResponse }
+     * 
+     */
+    public AddSampleResponse createAddSampleResponse() {
+        return new AddSampleResponse();
     }
 
     /**
@@ -60,6 +80,22 @@ public class ObjectFactory {
      */
     public HelloResponse createHelloResponse() {
         return new HelloResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindMinimumAmongSamples }
+     * 
+     */
+    public FindMinimumAmongSamples createFindMinimumAmongSamples() {
+        return new FindMinimumAmongSamples();
+    }
+
+    /**
+     * Create an instance of {@link FindMinimumAmongSamplesResponse }
+     * 
+     */
+    public FindMinimumAmongSamplesResponse createFindMinimumAmongSamplesResponse() {
+        return new FindMinimumAmongSamplesResponse();
     }
 
     /**
@@ -96,6 +132,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddSampleResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "addSampleResponse")
+    public JAXBElement<AddSampleResponse> createAddSampleResponse(AddSampleResponse value) {
+        return new JAXBElement<AddSampleResponse>(_AddSampleResponse_QNAME, AddSampleResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumBetweenResponse }{@code >}}
      * 
      */
@@ -111,6 +156,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Server/", name = "testConnection")
     public JAXBElement<TestConnection> createTestConnection(TestConnection value) {
         return new JAXBElement<TestConnection>(_TestConnection_QNAME, TestConnection.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddSample }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "addSample")
+    public JAXBElement<AddSample> createAddSample(AddSample value) {
+        return new JAXBElement<AddSample>(_AddSample_QNAME, AddSample.class, null, value);
     }
 
     /**
@@ -138,6 +192,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Server/", name = "hello")
     public JAXBElement<Hello> createHello(Hello value) {
         return new JAXBElement<Hello>(_Hello_QNAME, Hello.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumAmongSamplesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "findMinimumAmongSamplesResponse")
+    public JAXBElement<FindMinimumAmongSamplesResponse> createFindMinimumAmongSamplesResponse(FindMinimumAmongSamplesResponse value) {
+        return new JAXBElement<FindMinimumAmongSamplesResponse>(_FindMinimumAmongSamplesResponse_QNAME, FindMinimumAmongSamplesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindMinimumAmongSamples }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Server/", name = "findMinimumAmongSamples")
+    public JAXBElement<FindMinimumAmongSamples> createFindMinimumAmongSamples(FindMinimumAmongSamples value) {
+        return new JAXBElement<FindMinimumAmongSamples>(_FindMinimumAmongSamples_QNAME, FindMinimumAmongSamples.class, null, value);
     }
 
 }
